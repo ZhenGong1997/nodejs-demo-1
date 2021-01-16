@@ -21,8 +21,7 @@ var server = http.createServer(function(request, response){
   console.log("method: ");
   console.log(method);
   console.log('有个傻子发请求过来啦！路径（带查询参数）为：' + pathWithQuery)
-  console.log("request.headers: ");
-  console.log(request.headers);
+
 
   if(path === '/'){
     response.statusCode = 200
@@ -34,7 +33,7 @@ var server = http.createServer(function(request, response){
             <link rel="stylesheet" href="/x">
         </head>
         <body>
-            <h1>标题</h1>  
+            <h1>标题</h1>
         </body>
         
     `);
@@ -42,7 +41,7 @@ var server = http.createServer(function(request, response){
   } else if(path === '/x'){
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/css;charset=utf-8');
-    response.write(`h1{color: red;}`);
+    response.write(`body{color: red;}`);
     response.end();
   }
   
